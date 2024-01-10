@@ -26,7 +26,7 @@ function FeedbackForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (name === "" && text !== "") {
+    if (name === "" && text.trim().length > 10) {
       window.alert("You must write your name!");
     } else if (name !== "" && text.trim().length > 10) {
       const newItem = {
@@ -35,7 +35,7 @@ function FeedbackForm() {
       };
 
       addFeedback(newItem);
-      setMessage("");
+      setText("");
       setName("");
     }
   };
