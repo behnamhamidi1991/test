@@ -18,7 +18,13 @@ const fakeData = [
 export const FeedbackProvider = ({ children }) => {
   const [feedback, setFeedback] = useState(fakeData);
 
-  const contextValues = { feedback };
+  // Add Feedback
+  const addFeedback = (newFeedback) => {
+    newFeedback.id = crypto.randomUUID();
+    setFeedback([newFeedback, ...feedback]);
+  };
+
+  const contextValues = { feedback, addFeedback };
 
   return (
     <FeedbackContext.Provider value={contextValues}>
