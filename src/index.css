@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+:root {
+  --bg-color: #152238;
+  --text-color: #fefefe;
+  --dark-primary: #02020a;
+  --dark-blue: #05204a;
+  --orange-dark: #ff5f1f;
+  --orange-light: #ff7918;
+  --yellow-dark: #ffbf00;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: #fefefe;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  background-color: var(--dark-blue);
+  color: #ffbf00;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* FORM */
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  height: 280px;
+}
+
+.form-container h2 {
+  margin: 30px 0;
+  font-size: 21px;
+  font-weight: 300;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  height: 160px;
+}
+
+.form-container form textarea {
+  width: 100%;
+  padding: 12px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  height: 110px;
+  resize: none;
+}
+
+.form-container form button {
+  bottom: 1px;
+  left: 40px;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--orange-dark);
+  color: var(--text-color);
+  margin: 10px 5px;
+}
+
+/* FEEDBACK LIST */
+.feedback-list {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin: auto;
+  padding: 30px 0;
+  margin-bottom: 50px;
+}
+
+.feedback-item {
+  background-color: #0f3c85;
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  position: relative;
+}
+
+.feedback-item p {
+  line-height: 1.5;
+}
+
+.name {
+  color: #9fb9e4;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.feedbackNumber {
+  margin: 10px;
+  font-weight: 700;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  right: 12px;
+}
+
+.btnContainer button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nameInput {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 1082px) {
+  .form-container form {
+    width: 60%;
+  }
+
+  .feedback-list {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .form-container form {
+    width: 70%;
+  }
+
+  .feedback-list {
+    width: 70%;
+  }
+
+  .form-container h2 {
+    font-size: 18px;
+  }
+}
