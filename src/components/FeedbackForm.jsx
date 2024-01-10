@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import FeedbackContext from "../context/FeedbackContext";
 
 function FeedbackForm() {
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [name, setName] = useState("");
   const [text, setText] = useState("");
   const [message, setMessage] = useState("");
+
+  const { addFeedback } = useContext(FeedbackContext);
 
   const handleTextChange = (e) => {
     setText(e.target.value);
@@ -23,8 +26,17 @@ function FeedbackForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (name === "" || name.trim().length === 0) {
+    if (name === "" && text !== "") {
       window.alert("You must write your name!");
+    } else if (name !== "" && text.trim().length > 10) {
+      const newItem = {
+        name,
+        text,
+      };
+
+      addFeedback(newItem);
+      setMessage("");
+      setName("");
     }
   };
 
