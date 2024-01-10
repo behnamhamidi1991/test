@@ -22,6 +22,10 @@ function FeedbackForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (name === "" || name.trim().length === 0) {
+      window.alert("You must write your name!");
+    }
   };
 
   return (
